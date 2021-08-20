@@ -3,27 +3,53 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A689D50F2FE5C2224F117362 /* Pods_CatCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A41CECAD45C9EEC649A34D /* Pods_CatCalendar.framework */; };
 		DAAB2D5F26C7B19C00FDC5A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2D5E26C7B19C00FDC5A6 /* AppDelegate.swift */; };
 		DAAB2D6126C7B19C00FDC5A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2D6026C7B19C00FDC5A6 /* SceneDelegate.swift */; };
-		DAAB2D6326C7B19C00FDC5A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2D6226C7B19C00FDC5A6 /* ViewController.swift */; };
 		DAAB2D6626C7B19C00FDC5A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAAB2D6426C7B19C00FDC5A6 /* Main.storyboard */; };
 		DAAB2D6826C7B1A000FDC5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAB2D6726C7B1A000FDC5A6 /* Assets.xcassets */; };
 		DAAB2D6B26C7B1A000FDC5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAAB2D6926C7B1A000FDC5A6 /* LaunchScreen.storyboard */; };
+		DAAB2D7426C7D89000FDC5A6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2D7326C7D89000FDC5A6 /* LoginViewController.swift */; };
+		DAAB2D7726C7D8E500FDC5A6 /* CatSelectingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2D7626C7D8E500FDC5A6 /* CatSelectingViewController.swift */; };
+		DAAB2D7A26C7D90800FDC5A6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2D7926C7D90800FDC5A6 /* SettingViewController.swift */; };
+		DAAB2D7E26C7D94300FDC5A6 /* CatSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2D7D26C7D94300FDC5A6 /* CatSettingViewController.swift */; };
+		DAAB2D8126C7D9C900FDC5A6 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2D8026C7D9C900FDC5A6 /* InformationViewController.swift */; };
+		DAAB2D8526CB658800FDC5A6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2D8426CB658800FDC5A6 /* HomeViewController.swift */; };
+		DAAB2D8B26CB77C500FDC5A6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2D8A26CB77C500FDC5A6 /* TabBarController.swift */; };
+		DAAB2D8E26CCA6F600FDC5A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAAB2D8D26CCA6F600FDC5A6 /* GoogleService-Info.plist */; };
+		DAAB2DE026CCD0DD00FDC5A6 /* CatSelectingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2DDE26CCD0DD00FDC5A6 /* CatSelectingTableViewCell.swift */; };
+		DAAB2DE126CCD0DD00FDC5A6 /* CatSelectingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAAB2DDF26CCD0DD00FDC5A6 /* CatSelectingTableViewCell.xib */; };
+		DAAB2DE526CCD3F700FDC5A6 /* CatPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2DE426CCD3F700FDC5A6 /* CatPostData.swift */; };
+		DAAB2DE826CCDA1400FDC5A6 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2DE726CCDA1400FDC5A6 /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5AEBC03C91ACDBDC6FA13679 /* Pods-CatCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatCalendar.debug.xcconfig"; path = "Target Support Files/Pods-CatCalendar/Pods-CatCalendar.debug.xcconfig"; sourceTree = "<group>"; };
+		A1A41CECAD45C9EEC649A34D /* Pods_CatCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAB2D5B26C7B19B00FDC5A6 /* CatCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAB2D5E26C7B19C00FDC5A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAAB2D6026C7B19C00FDC5A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DAAB2D6226C7B19C00FDC5A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DAAB2D6526C7B19C00FDC5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DAAB2D6726C7B1A000FDC5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAAB2D6A26C7B1A000FDC5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAAB2D6C26C7B1A000FDC5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAAB2D7326C7D89000FDC5A6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DAAB2D7626C7D8E500FDC5A6 /* CatSelectingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSelectingViewController.swift; sourceTree = "<group>"; };
+		DAAB2D7926C7D90800FDC5A6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		DAAB2D7D26C7D94300FDC5A6 /* CatSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSettingViewController.swift; sourceTree = "<group>"; };
+		DAAB2D8026C7D9C900FDC5A6 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		DAAB2D8426CB658800FDC5A6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DAAB2D8A26CB77C500FDC5A6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		DAAB2D8D26CCA6F600FDC5A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DAAB2DDE26CCD0DD00FDC5A6 /* CatSelectingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSelectingTableViewCell.swift; sourceTree = "<group>"; };
+		DAAB2DDF26CCD0DD00FDC5A6 /* CatSelectingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatSelectingTableViewCell.xib; sourceTree = "<group>"; };
+		DAAB2DE426CCD3F700FDC5A6 /* CatPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatPostData.swift; sourceTree = "<group>"; };
+		DAAB2DE726CCDA1400FDC5A6 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		FC526E38D79748372A3DE6B8 /* Pods-CatCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatCalendar.release.xcconfig"; path = "Target Support Files/Pods-CatCalendar/Pods-CatCalendar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +57,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A689D50F2FE5C2224F117362 /* Pods_CatCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		434B9AA3AE6794BC40FFB11B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5AEBC03C91ACDBDC6FA13679 /* Pods-CatCalendar.debug.xcconfig */,
+				FC526E38D79748372A3DE6B8 /* Pods-CatCalendar.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CDEE59CADDC1BEE6CA830F85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1A41CECAD45C9EEC649A34D /* Pods_CatCalendar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DAAB2D5226C7B19B00FDC5A6 = {
 			isa = PBXGroup;
 			children = (
 				DAAB2D5D26C7B19C00FDC5A6 /* CatCalendar */,
 				DAAB2D5C26C7B19B00FDC5A6 /* Products */,
+				434B9AA3AE6794BC40FFB11B /* Pods */,
+				CDEE59CADDC1BEE6CA830F85 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,13 +102,24 @@
 		DAAB2D5D26C7B19C00FDC5A6 /* CatCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				DAAB2D8D26CCA6F600FDC5A6 /* GoogleService-Info.plist */,
 				DAAB2D5E26C7B19C00FDC5A6 /* AppDelegate.swift */,
 				DAAB2D6026C7B19C00FDC5A6 /* SceneDelegate.swift */,
-				DAAB2D6226C7B19C00FDC5A6 /* ViewController.swift */,
 				DAAB2D6426C7B19C00FDC5A6 /* Main.storyboard */,
 				DAAB2D6726C7B1A000FDC5A6 /* Assets.xcassets */,
 				DAAB2D6926C7B1A000FDC5A6 /* LaunchScreen.storyboard */,
 				DAAB2D6C26C7B1A000FDC5A6 /* Info.plist */,
+				DAAB2D7326C7D89000FDC5A6 /* LoginViewController.swift */,
+				DAAB2D7D26C7D94300FDC5A6 /* CatSettingViewController.swift */,
+				DAAB2D8426CB658800FDC5A6 /* HomeViewController.swift */,
+				DAAB2D7926C7D90800FDC5A6 /* SettingViewController.swift */,
+				DAAB2D8026C7D9C900FDC5A6 /* InformationViewController.swift */,
+				DAAB2D8A26CB77C500FDC5A6 /* TabBarController.swift */,
+				DAAB2D7626C7D8E500FDC5A6 /* CatSelectingViewController.swift */,
+				DAAB2DDE26CCD0DD00FDC5A6 /* CatSelectingTableViewCell.swift */,
+				DAAB2DDF26CCD0DD00FDC5A6 /* CatSelectingTableViewCell.xib */,
+				DAAB2DE426CCD3F700FDC5A6 /* CatPostData.swift */,
+				DAAB2DE726CCDA1400FDC5A6 /* Const.swift */,
 			);
 			path = CatCalendar;
 			sourceTree = "<group>";
@@ -74,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAAB2D6F26C7B1A000FDC5A6 /* Build configuration list for PBXNativeTarget "CatCalendar" */;
 			buildPhases = (
+				7FC046FC365ADF7C4D6CC6F3 /* [CP] Check Pods Manifest.lock */,
 				DAAB2D5726C7B19B00FDC5A6 /* Sources */,
 				DAAB2D5826C7B19B00FDC5A6 /* Frameworks */,
 				DAAB2D5926C7B19B00FDC5A6 /* Resources */,
+				A83E8CCD9CC8E1835B73B75E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,19 +186,72 @@
 				DAAB2D6B26C7B1A000FDC5A6 /* LaunchScreen.storyboard in Resources */,
 				DAAB2D6826C7B1A000FDC5A6 /* Assets.xcassets in Resources */,
 				DAAB2D6626C7B19C00FDC5A6 /* Main.storyboard in Resources */,
+				DAAB2DE126CCD0DD00FDC5A6 /* CatSelectingTableViewCell.xib in Resources */,
+				DAAB2D8E26CCA6F600FDC5A6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7FC046FC365ADF7C4D6CC6F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CatCalendar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A83E8CCD9CC8E1835B73B75E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CatCalendar/Pods-CatCalendar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CatCalendar/Pods-CatCalendar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CatCalendar/Pods-CatCalendar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DAAB2D5726C7B19B00FDC5A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAAB2D6326C7B19C00FDC5A6 /* ViewController.swift in Sources */,
+				DAAB2D7A26C7D90800FDC5A6 /* SettingViewController.swift in Sources */,
+				DAAB2D7426C7D89000FDC5A6 /* LoginViewController.swift in Sources */,
+				DAAB2D7726C7D8E500FDC5A6 /* CatSelectingViewController.swift in Sources */,
+				DAAB2D8B26CB77C500FDC5A6 /* TabBarController.swift in Sources */,
 				DAAB2D5F26C7B19C00FDC5A6 /* AppDelegate.swift in Sources */,
+				DAAB2DE826CCDA1400FDC5A6 /* Const.swift in Sources */,
+				DAAB2DE526CCD3F700FDC5A6 /* CatPostData.swift in Sources */,
+				DAAB2D8526CB658800FDC5A6 /* HomeViewController.swift in Sources */,
+				DAAB2D7E26C7D94300FDC5A6 /* CatSettingViewController.swift in Sources */,
 				DAAB2D6126C7B19C00FDC5A6 /* SceneDelegate.swift in Sources */,
+				DAAB2D8126C7D9C900FDC5A6 /* InformationViewController.swift in Sources */,
+				DAAB2DE026CCD0DD00FDC5A6 /* CatSelectingTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +395,7 @@
 		};
 		DAAB2D7026C7B1A000FDC5A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AEBC03C91ACDBDC6FA13679 /* Pods-CatCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +415,7 @@
 		};
 		DAAB2D7126C7B1A000FDC5A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC526E38D79748372A3DE6B8 /* Pods-CatCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
