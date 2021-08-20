@@ -11,6 +11,8 @@ import FirebaseUI
 class CatSelectingTableViewCell: UITableViewCell {
     @IBOutlet weak var catImageView: UIImageView!
     @IBOutlet weak var catNameLabel: UILabel!
+    @IBOutlet weak var catBirthdayLabel: UILabel!
+    @IBOutlet weak var catBreedsLabel: UILabel!
     
     
     override func awakeFromNib() {
@@ -30,5 +32,11 @@ class CatSelectingTableViewCell: UITableViewCell {
 
         // ねこの名前表示
         self.catNameLabel.text = "\(postData.catName!)"
+        
+        // 誕生日の表示
+        self.catBirthdayLabel.text = "\(postData.birthday!)"
+        
+        // 種類の表示
+        self.catBreedsLabel.text = "\(postData.catBreed!)"
         }
 }

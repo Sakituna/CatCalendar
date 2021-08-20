@@ -4,8 +4,8 @@ import Firebase
 class PostData: NSObject {
     var id: String
     var catName: String?
-    var caption: String?
-    var date: Date?
+    var birthday: String?
+    var catBreed: String?
     var likes: [String] = []
     var isLiked: Bool = false
 
@@ -16,10 +16,9 @@ class PostData: NSObject {
 
         self.catName = postDic["catName"] as? String
 
-        self.caption = postDic["caption"] as? String
-
-        let timestamp = postDic["date"] as? Timestamp
-        self.date = timestamp?.dateValue()
+        self.birthday = postDic["birthday"] as? String
+        
+        self.catBreed = postDic["catBreed"] as? String
 
         if let likes = postDic["likes"] as? [String] {
             self.likes = likes

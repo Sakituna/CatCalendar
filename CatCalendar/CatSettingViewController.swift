@@ -6,23 +6,73 @@
 //
 
 import UIKit
+import Firebase
+import SVProgressHUD
 
 class CatSettingViewController: UIViewController {
-
+    @IBOutlet weak var firstBtn: UIButton!
+    @IBOutlet weak var secondBtn: UIButton!
+    @IBOutlet weak var thirdBtn: UIButton!
+    @IBOutlet weak var catNameTextField: UITextField!
+    @IBOutlet weak var catBirthDayTextField: UITextField!
+    @IBOutlet weak var catBreedsTextField: UITextField!
+    
+    
+    //左アイコン
+    @IBAction func firstBtn(_ sender: Any) {
+        firstBtn.isEnabled = false
+        secondBtn.isEnabled = true
+        thirdBtn.isEnabled = true
+    }
+    
+    //真ん中アイコン
+    @IBAction func secondBtn(_ sender: Any) {
+        firstBtn.isEnabled = true
+        secondBtn.isEnabled = false
+        thirdBtn.isEnabled = true
+    }
+    
+    //右アイコン
+    @IBAction func thirdBtn(_ sender: Any) {
+        firstBtn.isEnabled = true
+        secondBtn.isEnabled = true
+        thirdBtn.isEnabled = false
+    }
+    
+    //登録ボタン
+    @IBAction func createCatBtn(_ sender: Any) {
+        // 投稿データの保存場所を定義する
+        let postRef = Firestore.firestore().collection(Const.PostPath).document()
+        // HUDで投稿処理中の表示を開始
+        SVProgressHUD.show()
+        
+        // FireStoreに投稿データを保存する
+        let name = Auth.auth().currentUser?.displayName
+        let postDic = [
+            "catName": name!,
+            "birthday": self.catBirthDayTextField.text!,
+            "catBreed": self.catBreedsTextField.text!,
+            ] as [String : Any]
+        postRef.setData(postDic)
+        // HUDで投稿完了を表示する
+        SVProgressHUD.showSuccess(withStatus: "登録しました")
+        // 投稿処理が完了したので先頭画面に戻る
+       UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    //キャンセルボタン
+    @IBAction func cancelBtn(_ sender: Any) {
+        // 一つ前の画面に戻る
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // タイトル文字列の設定
-        self.navigationItem.title = "ねこちゃん登録"
-        
-        // ナビゲーションバーの透明化
-        // 半透明の指定（デフォルト値）
-        self.navigationController?.navigationBar.isTranslucent = true
-        // 空の背景画像設定
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        // ナビゲーションバーの影画像（境界線の画像）を空に設定
-        self.navigationController!.navigationBar.shadowImage = UIImage()
     }
+    
+    
     
 
     /*
