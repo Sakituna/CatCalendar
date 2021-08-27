@@ -12,6 +12,11 @@ import CalculateCalendarLogic
 class HomeViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance {
     
     @IBOutlet weak var calendar: FSCalendar!
+    @IBOutlet weak var label: UILabel!
+    
+    var postData: PostData!
+    var getDate: String?
+    var selectRowNo: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,22 @@ class HomeViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSour
         // calendarの曜日部分の色を変更
         calendar.calendarWeekdayView.weekdayLabels[0].textColor = .systemRed
         calendar.calendarWeekdayView.weekdayLabels[6].textColor = .systemBlue
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.label.text = selectRowNo
+    }
+    
+    //カレンダー日にちを取得
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
+        let formattar = DateFormatter()
+         formattar.dateFormat = "MM-dd-YYYY"
+      self.getDate = formattar.string(from: date)
+        
+        //詳細入力画面への画面遷移
+        let informationViewController = self.storyboard?.instantiateViewController(withIdentifier: "InformationViewController") as! InformationViewController
+        self.present(informationViewController, animated: true, completion: nil)
+        
     }
     //
 }

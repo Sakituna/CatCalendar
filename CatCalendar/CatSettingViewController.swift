@@ -17,12 +17,18 @@ class CatSettingViewController: UIViewController {
     @IBOutlet weak var catBirthDayTextField: UITextField!
     @IBOutlet weak var catBreedsTextField: UITextField!
     
+    //アイコン画像の値
+    var imageNo: Int = 0
+    var postData: PostData!
+    
+    let db = Firestore.firestore()
     
     //左アイコン
     @IBAction func firstBtn(_ sender: Any) {
         firstBtn.isEnabled = false
         secondBtn.isEnabled = true
         thirdBtn.isEnabled = true
+        imageNo = 0
     }
     
     //真ん中アイコン
@@ -30,6 +36,7 @@ class CatSettingViewController: UIViewController {
         firstBtn.isEnabled = true
         secondBtn.isEnabled = false
         thirdBtn.isEnabled = true
+        imageNo = 1
     }
     
     //右アイコン
@@ -37,6 +44,7 @@ class CatSettingViewController: UIViewController {
         firstBtn.isEnabled = true
         secondBtn.isEnabled = true
         thirdBtn.isEnabled = false
+        imageNo = 2
     }
     
     //登録ボタン
@@ -47,17 +55,20 @@ class CatSettingViewController: UIViewController {
         SVProgressHUD.show()
         
         // FireStoreに投稿データを保存する
-        let name = Auth.auth().currentUser?.displayName
         let postDic = [
-            "catName": name!,
+            "catName": self.catNameTextField.text!,
             "birthday": self.catBirthDayTextField.text!,
             "catBreed": self.catBreedsTextField.text!,
-            ] as [String : Any]
+            "imageNo": self.imageNo
+        ] as [String : Any]
         postRef.setData(postDic)
+        
         // HUDで投稿完了を表示する
         SVProgressHUD.showSuccess(withStatus: "登録しました")
         // 投稿処理が完了したので先頭画面に戻る
-       UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
+        // 登録後 前画面に戻る
+        self.navigationController?.popViewController(animated: true)
+    }
     }
     
     //キャンセルボタン

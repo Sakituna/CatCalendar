@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A689D50F2FE5C2224F117362 /* Pods_CatCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A41CECAD45C9EEC649A34D /* Pods_CatCalendar.framework */; };
+		DA9F5FA926D370B600A57C95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA9F5FA826D370B600A57C95 /* Assets.xcassets */; };
 		DAAB2D5F26C7B19C00FDC5A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2D5E26C7B19C00FDC5A6 /* AppDelegate.swift */; };
 		DAAB2D6126C7B19C00FDC5A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2D6026C7B19C00FDC5A6 /* SceneDelegate.swift */; };
 		DAAB2D6626C7B19C00FDC5A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAAB2D6426C7B19C00FDC5A6 /* Main.storyboard */; };
-		DAAB2D6826C7B1A000FDC5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAB2D6726C7B1A000FDC5A6 /* Assets.xcassets */; };
 		DAAB2D6B26C7B1A000FDC5A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAAB2D6926C7B1A000FDC5A6 /* LaunchScreen.storyboard */; };
 		DAAB2D7426C7D89000FDC5A6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2D7326C7D89000FDC5A6 /* LoginViewController.swift */; };
 		DAAB2D7726C7D8E500FDC5A6 /* CatSelectingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB2D7626C7D8E500FDC5A6 /* CatSelectingViewController.swift */; };
@@ -30,11 +30,11 @@
 /* Begin PBXFileReference section */
 		5AEBC03C91ACDBDC6FA13679 /* Pods-CatCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatCalendar.debug.xcconfig"; path = "Target Support Files/Pods-CatCalendar/Pods-CatCalendar.debug.xcconfig"; sourceTree = "<group>"; };
 		A1A41CECAD45C9EEC649A34D /* Pods_CatCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA9F5FA826D370B600A57C95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAAB2D5B26C7B19B00FDC5A6 /* CatCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAB2D5E26C7B19C00FDC5A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAAB2D6026C7B19C00FDC5A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DAAB2D6526C7B19C00FDC5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DAAB2D6726C7B1A000FDC5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAAB2D6A26C7B1A000FDC5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAAB2D6C26C7B1A000FDC5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAAB2D7326C7D89000FDC5A6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -102,11 +102,11 @@
 		DAAB2D5D26C7B19C00FDC5A6 /* CatCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				DA9F5FA826D370B600A57C95 /* Assets.xcassets */,
 				DAAB2D8D26CCA6F600FDC5A6 /* GoogleService-Info.plist */,
 				DAAB2D5E26C7B19C00FDC5A6 /* AppDelegate.swift */,
 				DAAB2D6026C7B19C00FDC5A6 /* SceneDelegate.swift */,
 				DAAB2D6426C7B19C00FDC5A6 /* Main.storyboard */,
-				DAAB2D6726C7B1A000FDC5A6 /* Assets.xcassets */,
 				DAAB2D6926C7B1A000FDC5A6 /* LaunchScreen.storyboard */,
 				DAAB2D6C26C7B1A000FDC5A6 /* Info.plist */,
 				DAAB2D7326C7D89000FDC5A6 /* LoginViewController.swift */,
@@ -184,10 +184,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAAB2D6B26C7B1A000FDC5A6 /* LaunchScreen.storyboard in Resources */,
-				DAAB2D6826C7B1A000FDC5A6 /* Assets.xcassets in Resources */,
 				DAAB2D6626C7B19C00FDC5A6 /* Main.storyboard in Resources */,
 				DAAB2DE126CCD0DD00FDC5A6 /* CatSelectingTableViewCell.xib in Resources */,
 				DAAB2D8E26CCA6F600FDC5A6 /* GoogleService-Info.plist in Resources */,
+				DA9F5FA926D370B600A57C95 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
