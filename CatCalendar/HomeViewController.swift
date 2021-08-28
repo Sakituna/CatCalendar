@@ -15,6 +15,7 @@ class HomeViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSour
     @IBOutlet weak var label: UILabel!
     
     var postData: PostData!
+    var infoData: InfoData!
     var getDate: String?
     var selectRowNo: String = ""
 
@@ -47,8 +48,15 @@ class HomeViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSour
          formattar.dateFormat = "MM-dd-YYYY"
       self.getDate = formattar.string(from: date)
         
+        
+        
         //詳細入力画面への画面遷移
         let informationViewController = self.storyboard?.instantiateViewController(withIdentifier: "InformationViewController") as! InformationViewController
+        //InformationViewControllerへpostDataの受け渡し
+        informationViewController.postData = self.postData
+        //InformationViewControllerへgetDataの受け渡し
+        informationViewController.getDate = self.getDate
+        
         self.present(informationViewController, animated: true, completion: nil)
         
     }

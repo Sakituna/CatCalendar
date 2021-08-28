@@ -132,7 +132,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fP8-zk-0n5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fP8-zk-0n5">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -354,16 +354,22 @@
                                 <rect key="frame" x="30" y="126" width="32" height="32"/>
                                 <state key="normal" image="good_none"/>
                                 <connections>
-                                    <action selector="goodBtn:forEvent:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="Rdj-g4-0Rs"/>
+                                    <action selector="goodBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="ttS-Xo-bGY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEN-0E-OyY">
                                 <rect key="frame" x="92" y="126" width="32" height="32"/>
                                 <state key="normal" image="normal_none"/>
+                                <connections>
+                                    <action selector="normalBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="cFY-Mb-PaP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRB-Gn-Hr9">
                                 <rect key="frame" x="154" y="126" width="32" height="32"/>
                                 <state key="normal" image="bad_none"/>
+                                <connections>
+                                    <action selector="badBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="t3u-SC-wr8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="食欲" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1A-kL-1ZA">
                                 <rect key="frame" x="30" y="188" width="354" height="21"/>
@@ -374,14 +380,30 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqG-lC-B9s">
                                 <rect key="frame" x="30" y="219" width="32" height="32"/>
                                 <state key="normal" image="ok_none"/>
+                                <connections>
+                                    <action selector="okBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="Rsl-Oo-YIa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebp-fe-1PE">
+                                <rect key="frame" x="106" y="312" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="dryFoodBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="ank-hF-cEf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqV-Y4-eRP">
                                 <rect key="frame" x="92" y="219" width="32" height="32"/>
                                 <state key="normal" image="triangle_none"/>
+                                <connections>
+                                    <action selector="triangleBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="t3g-wh-Ir1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jph-gw-GCB">
                                 <rect key="frame" x="154" y="219" width="32" height="32"/>
                                 <state key="normal" image="no_none"/>
+                                <connections>
+                                    <action selector="notBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="YRF-R1-SaQ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ご飯の種類" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6Y-4c-Llu">
                                 <rect key="frame" x="30" y="281" width="354" height="21"/>
@@ -389,17 +411,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebp-fe-1PE">
-                                <rect key="frame" x="106" y="312" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv2-VN-r1F">
                                 <rect key="frame" x="30" y="312" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="wetFoodBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="j7L-ei-yBL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mF-7W-VPD">
                                 <rect key="frame" x="182" y="312" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="mixFoodBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="zVE-3F-Wnz"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おしっこの回数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgP-fF-UhB">
                                 <rect key="frame" x="30" y="372" width="354" height="21"/>
@@ -410,22 +434,37 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwm-k6-ljN">
                                 <rect key="frame" x="30" y="403" width="32" height="32"/>
                                 <state key="normal" image="pee_none"/>
+                                <connections>
+                                    <action selector="peeFirstBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="Cwd-Xd-doS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVw-W0-bDb">
                                 <rect key="frame" x="92" y="403" width="32" height="32"/>
                                 <state key="normal" image="pee_none"/>
+                                <connections>
+                                    <action selector="peeSecondBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="RGH-yb-nEB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umV-O0-7nP">
                                 <rect key="frame" x="154" y="403" width="32" height="32"/>
                                 <state key="normal" image="pee_none"/>
+                                <connections>
+                                    <action selector="peeThirdBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="qzF-Wa-u3f"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b04-BI-D65">
                                 <rect key="frame" x="216" y="403" width="32" height="32"/>
                                 <state key="normal" image="pee_none"/>
+                                <connections>
+                                    <action selector="peeForthBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="Fiu-ag-MWu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zh-jv-osg">
                                 <rect key="frame" x="278" y="403" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="peeOtherBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="fd9-fk-h3P"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="うんちの回数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9d-7X-Rnb">
                                 <rect key="frame" x="30" y="465" width="354" height="21"/>
@@ -436,22 +475,37 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXe-eV-La0">
                                 <rect key="frame" x="30" y="496" width="32" height="32"/>
                                 <state key="normal" image="poo_none"/>
+                                <connections>
+                                    <action selector="pooFirstBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="cPI-fK-4eH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lg1-iv-7lv">
                                 <rect key="frame" x="92" y="496" width="32" height="32"/>
                                 <state key="normal" image="poo_none"/>
+                                <connections>
+                                    <action selector="pooSecondBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="nsf-Hc-n5L"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVp-V6-aUD">
                                 <rect key="frame" x="154" y="496" width="32" height="32"/>
                                 <state key="normal" image="poo_none"/>
+                                <connections>
+                                    <action selector="pooThirdBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="ST9-CU-519"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYG-sd-KWX">
                                 <rect key="frame" x="216" y="496" width="32" height="32"/>
                                 <state key="normal" image="poo_none"/>
+                                <connections>
+                                    <action selector="pooForthBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="6mJ-hB-DIm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysT-Vi-Ytg">
                                 <rect key="frame" x="278" y="496" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pooOtherBtn:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="0Fa-NC-sKi"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日の体調・様子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCl-zn-yUY">
                                 <rect key="frame" x="30" y="558" width="354" height="21"/>
@@ -470,6 +524,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INS-ec-o0w">
                                 <rect key="frame" x="10" y="759" width="394" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="createInfo:" destination="Nsz-jC-b0q" eventType="touchUpInside" id="icA-kz-ws8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayW-77-7vc">
                                 <rect key="frame" x="10" y="799" width="394" height="30"/>

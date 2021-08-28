@@ -21,8 +21,6 @@ class CatSettingViewController: UIViewController {
     var imageNo: Int = 0
     var postData: PostData!
     
-    let db = Firestore.firestore()
-    
     //左アイコン
     @IBAction func firstBtn(_ sender: Any) {
         firstBtn.isEnabled = false
@@ -69,31 +67,28 @@ class CatSettingViewController: UIViewController {
         // 登録後 前画面に戻る
         self.navigationController?.popViewController(animated: true)
     }
-    }
-    
-    //キャンセルボタン
-    @IBAction func cancelBtn(_ sender: Any) {
-        // 一つ前の画面に戻る
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
-    
-    
 
-    /*
-    // MARK: - Navigation
+//キャンセルボタン
+@IBAction func cancelBtn(_ sender: Any) {
+    // 一つ前の画面に戻る
+    self.dismiss(animated: true, completion: nil)
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+}
+
+
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 }

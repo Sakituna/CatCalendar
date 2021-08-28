@@ -2,6 +2,6 @@
 import Foundation
 
 struct Const {
-    static let ImagePath = "images"
+    static let InfoPath = "info"
     static let PostPath = "posts"
 }
