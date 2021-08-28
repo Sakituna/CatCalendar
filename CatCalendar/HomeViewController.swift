@@ -7,6 +7,7 @@
 
 import UIKit
 import FSCalendar
+import Firebase
 import CalculateCalendarLogic
 
 class HomeViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance {
@@ -15,15 +16,24 @@ class HomeViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSour
     @IBOutlet weak var label: UILabel!
     
     var postData: PostData!
-    var infoData: InfoData!
+    var infoData:InfoData!
     var getDate: String?
     var selectRowNo: String = ""
-
+    var datesWithEvent = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.calendar.dataSource = self
         self.calendar.delegate = self
+        
+        //横スクロールで月を変更
+        calendar.scrollDirection = .horizontal
+        //選択中・今日の日付を四角で表示する
+        calendar.appearance.borderRadius = 0
+        
+        //カレンダー上部サイドの年・月を消す
+        self.calendar.appearance.headerMinimumDissolvedAlpha = 0.0;
         
         // calendarの曜日部分を日本語表記に変更
         calendar.calendarWeekdayView.weekdayLabels[0].text = "日"
@@ -42,23 +52,41 @@ class HomeViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSour
         self.label.text = selectRowNo
     }
     
-    //カレンダー日にちを取得
+    // FSCalendarDataSource
+    func calendar(calendar: FSCalendar!, hasEventForDate date: NSDate!) -> Bool {
+        return shouldShowEventDot
+    }
+
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
         let formattar = DateFormatter()
-         formattar.dateFormat = "MM-dd-YYYY"
-      self.getDate = formattar.string(from: date)
-        
-        
-        
-        //詳細入力画面への画面遷移
-        let informationViewController = self.storyboard?.instantiateViewController(withIdentifier: "InformationViewController") as! InformationViewController
-        //InformationViewControllerへpostDataの受け渡し
-        informationViewController.postData = self.postData
-        //InformationViewControllerへgetDataの受け渡し
-        informationViewController.getDate = self.getDate
-        
-        self.present(informationViewController, animated: true, completion: nil)
-        
+        formattar.dateFormat = "YYYY-MM-dd"
+        let selectDate = formattar.string(from: date)
+        self.getDate = selectDate
+            
+        let infoRef = Firestore.firestore().collection(Const.PostPath).document(postData.id).collection(Const.InfoPath).document(selectDate)
+        infoRef.getDocument() { document, error in
+            if let error = error {
+                print("DEBUG_PRINT: documentの取得が失敗しました。 \(error)")
+                return
+            }
+
+            var infoData: InfoData?
+            if let document = document, document.exists {
+                // 該当日付のdocumentが保存されている場合は、InfoDataを生成する
+                infoData = InfoData(document: document)
+            }
+                
+            //詳細入力画面への画面遷移
+            let informationViewController = self.storyboard?.instantiateViewController(withIdentifier: "InformationViewController") as! InformationViewController
+            //InformationViewControllerへpostDataの受け渡し
+            informationViewController.postData = self.postData
+            //InformationViewControllerへgetDataの受け渡し
+            informationViewController.getDate = self.getDate
+            //InformationViewControllerへinfoDataの受け渡し
+            informationViewController.infoData = infoData
+
+            self.present(informationViewController, animated: true, completion: nil)
+        }
     }
-    //
 }
+

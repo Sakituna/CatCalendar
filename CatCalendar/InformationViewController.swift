@@ -45,7 +45,7 @@ class InformationViewController: UIViewController {
     @IBOutlet weak var memoTextField: UITextField!
     
     var postData: PostData!
-    var infoData: InfoData!
+    var infoData: InfoData?
     var getDate: String!
     
     var conditionImageNo: Int = 0
@@ -56,8 +56,176 @@ class InformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+    //詳細画面上部の日付の表示
+    dateLabel.text = self.getDate
         
-        // Do any additional setup after loading the view.
+        
+        //保存されたinfoDataの取得
+        //一度登録されたものの一覧を表示させる指示
+        if let infoData = infoData {
+            self.memoTextField.text = "\(infoData.caption!)"
+            
+            self.conditionImageNo = infoData.conditionImageNo
+            //conditionImageNoの内容 → goodBtn、normalBtn、badBtnそれぞれのisEnabledを設定
+            //詳細入力画面に登録されたInfoDataが渡された時、それぞれのボタン状態も登録したときと同じ状態にするため
+            switch conditionImageNo {
+                case 0:  // Good
+                    goodBtn.isEnabled = false
+                    normalBtn.isEnabled = true
+                    badBtn.isEnabled = true
+
+                case 1:  // Normal
+                    goodBtn.isEnabled = true
+                    normalBtn.isEnabled = false
+                    badBtn.isEnabled = true
+
+                case 2: // Bad
+                    goodBtn.isEnabled = true
+                    normalBtn.isEnabled = true
+                    badBtn.isEnabled = false
+
+                default:
+                    goodBtn.isEnabled = true
+                    normalBtn.isEnabled = true
+                    badBtn.isEnabled = true
+            }
+            
+            //食欲
+            self.appetiteImageNo = infoData.appetiteImageNo
+            switch appetiteImageNo {
+            case 0:  //　○
+                okBtn.isEnabled = false
+                triangleBtn.isEnabled = true
+                noBtn.isEnabled = true
+                
+            case 1:  //　△
+                okBtn.isEnabled = true
+                triangleBtn.isEnabled = false
+                noBtn.isEnabled = true
+                
+            case 2:  //　×
+                okBtn.isEnabled = true
+                triangleBtn.isEnabled = true
+                noBtn.isEnabled = false
+                
+            default:
+                okBtn.isEnabled = true
+                triangleBtn.isEnabled = true
+                noBtn.isEnabled = true
+            }
+            
+            //ご飯の種類
+            self.foodImageNo = infoData.foodImageNo
+            self.foodImageNo = infoData.foodImageNo
+            switch foodImageNo {
+            case 0:  //　wet
+                wetFoodBtn.isEnabled = false
+                dryFoodBtn.isEnabled = true
+                mixFoodBtn.isEnabled = true
+                
+            case 1:  //　△
+                wetFoodBtn.isEnabled = true
+                dryFoodBtn.isEnabled = false
+                mixFoodBtn.isEnabled = true
+                
+            case 2:  //　×
+                wetFoodBtn.isEnabled = true
+                dryFoodBtn.isEnabled = true
+                mixFoodBtn.isEnabled = false
+                
+            default:
+                wetFoodBtn.isEnabled = true
+                dryFoodBtn.isEnabled = true
+                mixFoodBtn.isEnabled = true
+            }
+            
+            //おしっこの回数
+            self.peeImageNo = infoData.peeImageNo
+            self.peeImageNo = infoData.peeImageNo
+            switch peeImageNo {
+            case 0:  //　1つ選択
+                peeFirstBtn.isEnabled = false
+                peeSecondBtn.isEnabled = true
+                peeThirdBtn.isEnabled = true
+                peeForthBtn.isEnabled = true
+                peeOtherBtn.isEnabled = true
+            case 1:  //　2つ選択
+                peeFirstBtn.isEnabled = false
+                peeSecondBtn.isEnabled = false
+                peeThirdBtn.isEnabled = true
+                peeForthBtn.isEnabled = true
+                peeOtherBtn.isEnabled = true
+            case 2:  //　3つ選択
+                peeFirstBtn.isEnabled = false
+                peeSecondBtn.isEnabled = false
+                peeThirdBtn.isEnabled = false
+                peeForthBtn.isEnabled = true
+                peeOtherBtn.isEnabled = true
+            case 3: //4つ選択
+                peeFirstBtn.isEnabled = false
+                peeSecondBtn.isEnabled = false
+                peeThirdBtn.isEnabled = false
+                peeForthBtn.isEnabled = false
+                peeOtherBtn.isEnabled = true
+            case 4: //その他選択
+                peeFirstBtn.isEnabled = true
+                peeSecondBtn.isEnabled = true
+                peeThirdBtn.isEnabled = true
+                peeForthBtn.isEnabled = true
+                peeOtherBtn.isEnabled = false
+                
+            default:
+                peeFirstBtn.isEnabled = true
+                peeSecondBtn.isEnabled = true
+                peeThirdBtn.isEnabled = true
+                peeForthBtn.isEnabled = true
+                peeOtherBtn.isEnabled = true
+            }
+            
+            
+            self.pooImageNo = infoData.pooImageNo
+            self.pooImageNo = infoData.pooImageNo
+            switch pooImageNo {
+            case 0:  //　1つ選択
+                pooFirstBtn.isEnabled = false
+                pooSecondBtn.isEnabled = true
+                pooThirdBtn.isEnabled = true
+                pooForthBtn.isEnabled = true
+                pooOtherBtn.isEnabled = true
+            case 1:  //　2つ選択
+                pooFirstBtn.isEnabled = false
+                pooSecondBtn.isEnabled = false
+                pooThirdBtn.isEnabled = true
+                pooForthBtn.isEnabled = true
+                pooOtherBtn.isEnabled = true
+            case 2:  //　3つ選択
+                pooFirstBtn.isEnabled = false
+                pooSecondBtn.isEnabled = false
+                pooThirdBtn.isEnabled = false
+                pooForthBtn.isEnabled = true
+                pooOtherBtn.isEnabled = true
+            case 3: //4つ選択
+                pooFirstBtn.isEnabled = false
+                pooSecondBtn.isEnabled = false
+                pooThirdBtn.isEnabled = false
+                pooForthBtn.isEnabled = false
+                pooOtherBtn.isEnabled = true
+            case 4: //その他選択
+                pooFirstBtn.isEnabled = true
+                pooSecondBtn.isEnabled = true
+                pooThirdBtn.isEnabled = true
+                pooForthBtn.isEnabled = true
+                pooOtherBtn.isEnabled = false
+                
+            default:
+                pooFirstBtn.isEnabled = true
+                pooSecondBtn.isEnabled = true
+                pooThirdBtn.isEnabled = true
+                pooForthBtn.isEnabled = true
+                pooOtherBtn.isEnabled = true
+            }
+        }
     }
     
     //体調ボタン
@@ -172,7 +340,7 @@ class InformationViewController: UIViewController {
         pooImageNo = 0
     }
     @IBAction func pooSecondBtn(_ sender: Any) {
-        pooFirstBtn.isEnabled = true
+        pooFirstBtn.isEnabled = false
         pooSecondBtn.isEnabled = false
         pooThirdBtn.isEnabled = true
         pooForthBtn.isEnabled = true
@@ -180,17 +348,17 @@ class InformationViewController: UIViewController {
         pooImageNo = 1
     }
     @IBAction func pooThirdBtn(_ sender: Any) {
-        pooFirstBtn.isEnabled = true
-        pooSecondBtn.isEnabled = true
+        pooFirstBtn.isEnabled = false
+        pooSecondBtn.isEnabled = false
         pooThirdBtn.isEnabled = false
         pooForthBtn.isEnabled = true
         pooOtherBtn.isEnabled = true
         pooImageNo = 2
     }
     @IBAction func pooForthBtn(_ sender: Any) {
-        pooFirstBtn.isEnabled = true
-        pooSecondBtn.isEnabled = true
-        pooThirdBtn.isEnabled = true
+        pooFirstBtn.isEnabled = false
+        pooSecondBtn.isEnabled = false
+        pooThirdBtn.isEnabled = false
         pooForthBtn.isEnabled = false
         pooOtherBtn.isEnabled = true
         pooImageNo = 3
@@ -231,12 +399,6 @@ class InformationViewController: UIViewController {
         // 登録後 前画面に戻る
         // 投稿処理が完了したので先頭画面に戻る
         UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
-        
-        
-        //詳細入力画面への画面遷移
-        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Home") as! HomeViewController
-        //HomeViewControllerへinfoDataの受け渡し
-        homeViewController.infoData = self.infoData
     }
     
 

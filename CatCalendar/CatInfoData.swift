@@ -11,20 +11,20 @@ class InfoData: NSObject {
     var peeImageNo: Int!
     var pooImageNo: Int!
     
-    init(document: QueryDocumentSnapshot) {
+    init(document: DocumentSnapshot) {
         self.id = document.documentID
         let infoDic = document.data()
         
-        self.caption = infoDic["caption"] as? String
+        self.caption = infoDic?["caption"] as? String
         
-        self.conditionImageNo = infoDic["conditionImageNo"] as? Int
+        self.conditionImageNo = infoDic?["conditionImageNo"] as? Int
         
-        self.appetiteImageNo = infoDic["appetiteImageNo"] as? Int
+        self.appetiteImageNo = infoDic?["appetiteImageNo"] as? Int
  
-        self.foodImageNo = infoDic["foodImageNo"] as? Int
+        self.foodImageNo = infoDic?["foodImageNo"] as? Int
         
-        self.peeImageNo = infoDic["peeImageNo"] as? Int
+        self.peeImageNo = infoDic?["peeImageNo"] as? Int
         
-        self.pooImageNo = infoDic["pooImageNo"] as? Int
+        self.pooImageNo = infoDic?["pooImageNo"] as? Int
     }
 }
