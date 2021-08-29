@@ -19,13 +19,17 @@ class HomeViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSour
     var infoData:InfoData!
     var getDate: String?
     var selectRowNo: String = ""
-    var datesWithEvent = ""
+    var infoDic: [String:InfoData] = [:]
+    // Firestoreのリスナー
+    var listener: ListenerRegistration?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.calendar.dataSource = self
         self.calendar.delegate = self
+        
         
         //横スクロールで月を変更
         calendar.scrollDirection = .horizontal
@@ -49,33 +53,64 @@ class HomeViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSour
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.label.text = selectRowNo
+        let infoRef = Firestore.firestore().collection(Const.PostPath).document(postData.id).collection(Const.InfoPath)
+        
+        listener = infoRef.addSnapshotListener() { (documentSnapshot, error) in
+            if let error = error {
+                print("DEBUG_PRINT: snapshotの取得が失敗しました。 \(error)")
+                return
+            }
+            // 取得したdocumentをもとにPostDataを作成し、postArrayの配列にする。
+            self.infoDic = [:]
+            for document in documentSnapshot!.documents {
+                print("DEBUG_PRINT: document取得 \(document.documentID)")
+                let infoData = InfoData(document: document)
+                self.infoDic[document.documentID] = infoData
+                
+                // カレンダーの表示を更新する
+                self.calendar.reloadData()
+            }
+        }
     }
     
-    // FSCalendarDataSource
-    func calendar(calendar: FSCalendar!, hasEventForDate date: NSDate!) -> Bool {
-        return shouldShowEventDot
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("DEBUG_PRINT: viewWillDisappear")
+        // listenerを削除して監視を停止する
+        listener?.remove()
     }
-
+    
+    //ドットをつけるかつけないか
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        let formattar = DateFormatter()
+        formattar.dateFormat = "YYYY-MM-dd"
+        let checkDate = formattar.string(from: date)
+        if infoDic[checkDate] == nil {
+            return 0
+        } else {
+            return 1
+        }
+    }
+    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
         let formattar = DateFormatter()
         formattar.dateFormat = "YYYY-MM-dd"
         let selectDate = formattar.string(from: date)
         self.getDate = selectDate
-            
+        
         let infoRef = Firestore.firestore().collection(Const.PostPath).document(postData.id).collection(Const.InfoPath).document(selectDate)
         infoRef.getDocument() { document, error in
             if let error = error {
                 print("DEBUG_PRINT: documentの取得が失敗しました。 \(error)")
                 return
             }
-
+            
             var infoData: InfoData?
             if let document = document, document.exists {
                 // 該当日付のdocumentが保存されている場合は、InfoDataを生成する
                 infoData = InfoData(document: document)
             }
-                
+            
             //詳細入力画面への画面遷移
             let informationViewController = self.storyboard?.instantiateViewController(withIdentifier: "InformationViewController") as! InformationViewController
             //InformationViewControllerへpostDataの受け渡し
@@ -84,9 +119,8 @@ class HomeViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSour
             informationViewController.getDate = self.getDate
             //InformationViewControllerへinfoDataの受け渡し
             informationViewController.infoData = infoData
-
+            
             self.present(informationViewController, animated: true, completion: nil)
         }
     }
 }
-

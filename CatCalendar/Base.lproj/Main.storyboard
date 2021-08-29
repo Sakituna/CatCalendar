@@ -704,13 +704,6 @@
                                 <rect key="frame" x="10" y="74" width="394" height="689"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnm-vw-euB">
-                                <rect key="frame" x="186" y="45" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SvH-OM-Cz1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -724,7 +717,6 @@
                     <tabBarItem key="tabBarItem" title="ホーム" id="DI9-Ol-t5a"/>
                     <connections>
                         <outlet property="calendar" destination="m0R-hD-Ffz" id="dsM-qA-N2t"/>
-                        <outlet property="label" destination="qnm-vw-euB" id="5zH-Sq-xpH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ka8-sk-GdC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
